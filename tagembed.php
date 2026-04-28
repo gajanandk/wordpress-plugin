@@ -36,9 +36,9 @@ require_once TAGEMBED_PLUGIN_DIR_PATH . 'helper/helper.php';
 function tagembed_plugin_scripts_css()
 {
 	wp_enqueue_script('__tagembed__embbedJs', TAGEMBED_PLUGIN_REACT_URL . 'embed.min.js', ['jquery'], TAGEMBED_PLUGIN_VERSION, true);
-	wp_enqueue_script('__tagembed__tailwind-js', TAGEMBED_PLUGIN_URL . 'assets/js/browser@4.js', '', '');
 	if (is_admin()) :
 		/* CSS */
+		wp_enqueue_style('__tagembed__tailwindCss', TAGEMBED_PLUGIN_URL . '/assets/css/tailwind.build.css', '', TAGEMBED_PLUGIN_VERSION);
 		wp_enqueue_style('__tagembed__commonCss', TAGEMBED_PLUGIN_URL . '/assets/css/common.css', '', TAGEMBED_PLUGIN_VERSION);
 		wp_enqueue_style('__tagembed__toastCss', TAGEMBED_PLUGIN_URL . '/assets/css/toast.css', '', TAGEMBED_PLUGIN_VERSION);
 		wp_enqueue_style('__tagembed__confirmDialogCss', TAGEMBED_PLUGIN_URL . '/assets/css/confirm_dialog.css', '', TAGEMBED_PLUGIN_VERSION);
